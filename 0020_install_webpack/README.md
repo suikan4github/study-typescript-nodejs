@@ -32,7 +32,6 @@ npm install typescript ts-loader webpack webpack-cli webpack-dev-server --save-d
 ```
 このコマンドを実行すると、ローカルに取得したモジュールがpackage.jsonに記録され、依存性情報として利用できるようになる(devDependencies)。 それ以外の項目は自分で記録した。
 
-scripts項目は、npmに対してビルド時とスタート時の挙動を指定している。npm build, npm startのように使う。なお、スタート後はwebpackがソース変更を検知して自動的にビルドする。
 
 ```json:package.json
 {
@@ -56,48 +55,10 @@ scripts項目は、npmに対してビルド時とスタート時の挙動を指�
   }
 }
 ```
+package.jsonのscripts項目は、npmに対してビルド時とスタート時の挙動を指定している。npm build, npm startのように使う。なお、スタート後はwebpackがソース変更を検知して自動的にビルドする。
 
-Webpackの設定ファイルは[TypeScriptチュートリアル -環境構築編-](https://qiita.com/ochiochi/items/efdaa0ae7d8c972c8103)のものをそのままコピーした。
+Webpackの設定ファイル [webpack.config.js](webpack.config.js) は[TypeScriptチュートリアル -環境構築編-](https://qiita.com/ochiochi/items/efdaa0ae7d8c972c8103)のものをそのままコピーした。
 
-```js:webpack.config.js
-const path = require('path');
-module.exports = {
-    // モジュールバンドルを行う起点となるファイルの指定
-    // 指定できる値としては、ファイル名の文字列や、それを並べた配列やオブジェクト
-    // 下記はオブジェクトとして指定した例 
-    entry: {
-        bundle: './src/app.ts'
-    },  
-    output: {
-        // モジュールバンドルを行った結果を出力する場所やファイル名の指定
-        // "__dirname"はこのファイルが存在するディレクトリを表すnode.jsで定義済みの定数
-        path: path.join(__dirname,'dist'),
-        filename: '[name].js'  // [name]はentryで記述した名前(この例ではbundle）が入る
-    },
-    // モジュールとして扱いたいファイルの拡張子を指定する
-    // 例えば「import Foo from './foo'」という記述に対して"foo.ts"という名前のファイルをモジュールとして探す
-    // デフォルトは['.js', '.json']
-    resolve: {
-        extensions:['.ts','.js']
-    },
-    devServer: {
-        // webpack-dev-serverの公開フォルダ
-        static: {
-            directory: path.join(__dirname, "dist"),
-        },
-    },
-    // モジュールに適用するルールの設定（ここではローダーの設定を行う事が多い）
-    module: {
-        rules: [
-            {
-                // 拡張子が.tsで終わるファイルに対して、TypeScriptコンパイラを適用する
-                test:/\.ts$/,loader:'ts-loader'
-            }
-        ]
-    }
-}
-
-```
 設定ファイルができたらTypescriptコンパイラのデフォルト設定ファイルを生成する。
 ```sh
 tsc --init
@@ -115,6 +76,6 @@ npm startスクリプトを実行すると、webpackがサーバーを起動す�
 npm start
 ```
 
-localhost:8080でサーバーにアクセスできる。
+[localhost:8080](http://localhost:8080)でサーバーにアクセスできる。
 
 ![](image/2024-11-19.png)
