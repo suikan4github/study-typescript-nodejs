@@ -109,6 +109,7 @@ tsconfig.jsonが生成される。コンパイル・オプションはこのフ�
 - [src/app.ts](src/app.ts)
 - [src/item.ts](src/item.ts)
 - [dst/index.html](dist/index.html)
+
 npm startスクリプトを実行すると、webpackがサーバーを起動する。
 ```sh
 npm start
