@@ -113,5 +113,7 @@ npm startスクリプトを実行すると、webpackがサーバーを起動す�
 ```sh
 npm start
 ```
+
 localhost:8080でサーバーにアクセスできる。
+
 ![](image/2024-11-19.png)
