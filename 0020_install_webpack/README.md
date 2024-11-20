@@ -5,7 +5,7 @@
 コマンドラインから
 
 ```sh
-npm -install
+npm install
 ```
 によって必要なモジュールを取得する。取得すべきモジュールはpackage.jsonに記述してある。取得したモジュールはnode_modulesに展開される。
 
@@ -57,7 +57,7 @@ npm install typescript ts-loader webpack webpack-cli webpack-dev-server --save-d
 ```
 package.jsonのscripts項目は、npmに対してビルド時とスタート時の挙動を指定している。npm build, npm startのように使う。なお、スタート後はwebpackがソース変更を検知して自動的にビルドする。
 
-Webpackの設定ファイル [webpack.config.js](webpack.config.js) は[TypeScriptチュートリアル -環境構築編-](https://qiita.com/ochiochi/items/efdaa0ae7d8c972c8103)のものをそのままコピーした。
+Webpackの設定ファイル [webpack.config.js](webpack.config.js) は[TypeScriptチュートリアル -環境構築編-](https://qiita.com/ochiochi/items/efdaa0ae7d8c972c8103)のものをコピーしたのち、ディスティネーションをdistからdstに変更した（GitHubが生成した.gitignoreとの間に齟齬があったため）。
 
 設定ファイルができたらTypescriptコンパイラのデフォルト設定ファイルを生成する。
 ```sh

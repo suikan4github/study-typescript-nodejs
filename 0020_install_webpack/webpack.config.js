@@ -9,7 +9,7 @@ module.exports = {
     output: {
         // モジュールバンドルを行った結果を出力する場所やファイル名の指定
         // "__dirname"はこのファイルが存在するディレクトリを表すnode.jsで定義済みの定数
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, 'dst'),
         filename: '[name].js'  // [name]はentryで記述した名前(この例ではbundle）が入る
     },
     // モジュールとして扱いたいファイルの拡張子を指定する
@@ -21,7 +21,7 @@ module.exports = {
     devServer: {
         // webpack-dev-serverの公開フォルダ
         static: {
-            directory: path.join(__dirname, "dist"),
+            directory: path.join(__dirname, "dst"),
         },
     },
     // モジュールに適用するルールの設定（ここではローダーの設定を行う事が多い）
