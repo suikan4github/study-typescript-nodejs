@@ -13,7 +13,7 @@ node_modulesは容量が大きく、また、npm --installで簡単に取得で�
 
 ## この例題について
 
-Webpackを使ったTypescript開発環境の構築方法を説明する。
+Webpackを使ったTypescript開発環境の構築方法を学習する。
 - Ubuntu 24.04 (WSL)
 - node v18.19.1
 - npm 9.2.0

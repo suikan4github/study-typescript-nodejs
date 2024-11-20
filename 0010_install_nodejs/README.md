@@ -1,7 +1,7 @@
 # node.jsとTypescriptコンパイラの取得
 ## この例題について
 
-Typescriptによるプログラムのコマンドライン実行について説明する。
+Typescriptによるプログラムのコマンドライン実行について学習する。
 - Ubuntu 24.04 (WSL)
 - node v18.19.1
 - npm 9.2.0
