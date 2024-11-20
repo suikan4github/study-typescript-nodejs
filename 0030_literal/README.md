@@ -8,8 +8,8 @@ Typescript言語の定数リテラルについて学習する。
 - Visual Studio Code 1.95.3
 
 環境の作成に関しては [0010](../0010_install_nodejs/README.md)を参照。
-
-サンプルプログラムを実行するには
+## サンプルプログラムの実行
+コマンドラインから
 ```sh
 tsc hello.ts && node hello.js
 ```
