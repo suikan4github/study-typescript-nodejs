@@ -26,4 +26,4 @@ Typescriptで組んだアプリケーションは指定のindex.htmlと組み合
 
 - [0010](0010_install_nodejs/README.md) : node.jsとTypescriptコンパイラの取得
 - [0020](0020_install_webpack/README.md) : Webpackのインストール
-- [0010](0030_literal/README.md) : Typescriptの定数リテラル
+- [0030](0030_literal/README.md) : Typescriptの定数リテラル
