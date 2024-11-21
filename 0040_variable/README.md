@@ -7,7 +7,7 @@ Typescript言語の変数について学習する。
 - tsc 5.6.3
 - Visual Studio Code 1.95.3
 
-環境の作成に関しては [0010](../0010_install_nodejs/README.md)を参照。
+環境の作成に関しては [0010](../0010_install_nodejs/README.md) を参照。
 ## サンプルプログラムの実行
 コマンドラインから
 ```sh
@@ -15,62 +15,39 @@ tsc hello.ts && node hello.js
 ```
 を実行する。
 ## 変数
-Typescriptは大文字と小文字を区別する。したがって、Number型を除くリテラルでは、大文字と小文字が区別される。
-### コメント
-1行コメントは // で始める。行末までがコメントになる。
-```ts
-// The presence or absence of comments has no influence 
-// on whether a program is legal or illegal.
-```
-ブロックコメントは /* */ で囲む。
+Typescriptは大文字と小文字を区別する。したがって、変数名である識別子は、大文字と小文字が区別される。
+### 変数宣言
+変数宣言は "let 変数名 [':' 型注釈]['=' 初期値]" の文法を持つ。初期値は省略可能で、その場合はundefinedが初期値になる。初期値の有無にかかわらず、型注釈をつけて型を明示できる。初期値がある場合にはコンパイラが型推論を行うため、型注釈は不要である。
 
+型注釈も初期値もない場合には変数の型はanyになる。any型変数についてはコンパイラは型チェックを行わない。
 ```ts
-/*
- Furthermore, comments do not influence the meaning of a program; 
- their sole purpose is the enlightenment of the human reader.
-*/
-```
-### 文字列
-文字列リテラルはシングルクオート、ダブルクオート、あるいはバッククオートで囲む。
-```ts
-console.log('Hello, Typescript!');
-console.log("Hello, Typescript!");
-console.log(`Hello, Typescript!`);
-```
-異種のクオートで囲むことで、文字列内にクオートを配置することができる。ただし、同種のクオートのネストはできない。
-```ts
-console.log(`String with 'single' and "double" quote.`);
-console.log('String with "double" and `back` quote.');
-console.log("String with `back` and 'single' quote.");
-```
-同種のクオートでネストする場合は、エスケープ文字を使う。
-```ts
-console.log('String with \'escape\' character.');
-console.log("String with \"escape\" character.");
-console.log(`String with \`escape\` character.`);
+let foo: string = 'My string in variable';
+let bar = 'Sting variable with type predication';
+let baz: string;
+let qux;
 ```
 
-### 数値
-数値はNumber型である。Number型は整数と実数を区別しない。Number型はIEEE倍精度浮動小数点数として実装される。なお、指数部を示す'E'は大文字小文字を区別しない。一方で、InfinityとNaNは大文字と小文字を区別する。
-```ts
-console.log(42);
-console.log(-42);
-console.log(3.14);
-console.log(6.022E-23);
-console.log(6.022e-23);
-console.log(Infinity);
-console.log(NaN);
-```
-### 論理値
-論理値はBoolean型である。trueとfalseが用意されている。
-```ts
-console.log(true);
-console.log(false);
-```
+### 代入
+宣言した変数には値を再代入できる。変数の型に一致しない代入はコンパイル・エラーを起こす
 
-### 特殊な値
-特殊な値としてnullとundefinedが定義されている。
 ```ts
-console.log(null);
-console.log(undefined);
+// Number variable
+let number_variable = 3.14;
+// Assignment to variable
+number_variable = 2.718;
+console.log(number_variable);
+
+```
+### 定数
+letではなくconstを使うと、定数宣言になる。定数には再代入できない。
+```ts
+const one = 1;
+```
+### varによる変数宣言は使わない
+letではなくvarを使って変数宣言をすることはできる。ただし、この変数はブロック・スコープではなく関数スコープであるため、現代的なプログラミング言語の感覚とマッチしない。
+
+varはECMAScript 2015(ES6)より非推奨となっており、これから学ぶ必要はない。
+
+```ts
+var number_variable3 = 3;
 ```
