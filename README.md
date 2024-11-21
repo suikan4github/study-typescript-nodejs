@@ -18,6 +18,10 @@ npm start
 によってwebpackが実行されます。Typescriptのコンパイルは実行時とソース変更時に自動で行われます。
 
 この説明は、webpackを使用する各ディレクトリのREADME.mdにも書いてあります。
+
+# オンライン・インタープリタ
+Typescriptにはプレイグラウンドと呼ばれるオンライン・インタープリタが多数存在します。これらはTypescriptを学ぶ上で大いに役立ちます。
+代表的なものとして[Typescript : TS Playground](https://www.typescriptlang.org/play/?#code/DYUwLgBA9hC8EG8BQFUEMBcEBEAzKU2ANCqgEZYCMATCahAMZbZloBO2SAvgNxKiQGfARAAmfABQJGRMRC5xEETDlYAvYhAoRKABkryAlHwZQAdgGcooAHTAoAcwkNjSU5esg7jiaONA)を挙げておきます。
 # 内容
 
 0010を除くと、Webpackを使ったサーバサイドの実行になっています。Webpackはローカルでサーバサイド・アプリケーションを簡単に実行できる枠組みです。
