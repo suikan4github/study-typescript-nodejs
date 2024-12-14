@@ -25,4 +25,13 @@
     limited_string = "five";
     console.log("Value is ", limited_string);
 
+    // Literal Type Definition 
+    type True = true;
+
+    let limited_boolean: True = true;
+    console.log("Value is ", limited_boolean);
+    console.log("Type is", typeof (limited_boolean));   // Boolean type. 
+    // limited_boolean = false; // not allowed
+    limited_boolean = true;
+    console.log("Value is ", limited_boolean);
 }

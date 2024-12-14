@@ -54,4 +54,16 @@ Typescriptのリテラル型は、すでに存在する型のサブタイプを�
     console.log("Value is ", limited_string);
 ```
 ### 論理型のリテラル型
-論理値のリテラル型も作ることができるが、少し奇妙なので別項にする。
+論理値のリテラル型も作ることができる。論理値のリテラル型はタグ付きユニオンなどの特殊用途に使う。
+
+```ts
+    // Literal Type Definition 
+    type True = true;
+
+    let limited_boolean: True = true;
+    console.log("Value is ", limited_boolean);
+    console.log("Type is", typeof (limited_boolean));   // Boolean type. 
+    // limited_boolean = false; // not allowed
+    limited_boolean = true;
+    console.log("Value is ", limited_boolean);
+```
