@@ -36,7 +36,6 @@
     console.log("limited_boolean is ", limited_boolean);
 
     // Numerical Literal Type Definition 
-
     let easy_limited_var: 1 | 2 = 1;
     console.log("easy_limited_var is ", easy_limited_var);
     console.log("Type is", typeof (easy_limited_var));   // Number type. 
