@@ -54,7 +54,6 @@ Typescriptのリテラル型は、すでに存在する型のサブタイプを�
     console.log("Value is ", limited_string);
 ```
 ### 論理型のリテラル型
-論理値のリテラル型も作ることができる。論理値のリテラル型はタグ付きユニオンなどの特殊用途に使う。
 
 ```ts
     // Literal Type Definition 
