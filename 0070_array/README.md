@@ -1,4 +1,4 @@
-# Typescriptの変数
+# Typescriptの配列
 ## この例題について
 
 Typescript言語の配列型について学習する。
