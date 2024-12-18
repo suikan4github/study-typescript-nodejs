@@ -1,4 +1,4 @@
-# Typescriptの変数
+# Typescriptの定数とリテラル型
 ## この例題について
 
 Typescript言語のconstとリテラル型について学習する。
