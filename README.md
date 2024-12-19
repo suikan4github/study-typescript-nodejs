@@ -35,3 +35,8 @@ Typescriptで組んだアプリケーションは指定のindex.htmlと組み合
 - [0020](0020_install_webpack/README.md) : Webpackのインストール
 - [0030](0030_literal/README.md) : Typescriptの定数リテラル
 - [0040](0040_variable/README.md) : Typescriptの変数
+- [0050](0050_const_literal/README.md) : 定数とリテラル型
+- [0060](0060_array/README.md) : 配列型
+- [0070](0070_destructuring_assignment/) : 分解代入
+- [0080](0080_tupple/README.md) : タプル
+
