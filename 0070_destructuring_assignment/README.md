@@ -28,7 +28,7 @@ tsc hello.ts && node hello.js
     console.log("one is ", one);
     console.log("two is ", two);
 ```
-分割代入は特に指定の無い限り戦闘要素から代入される。
+分割代入は特に指定の無い限り先頭要素から代入される。
 
 変数の数が配列サイズよりも少ない場合、残りの要素は無視される。
 
