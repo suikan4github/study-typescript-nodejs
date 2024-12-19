@@ -8,7 +8,7 @@
     console.log("one is ", one);
     console.log("two is ", two);
 
-    // Extract from middle
+    // discontinuous extraction
     let [, beta, , delta] = foo;
     console.log("beta is ", beta);
     console.log("delta is ", delta);
