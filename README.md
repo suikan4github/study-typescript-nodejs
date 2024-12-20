@@ -39,4 +39,5 @@ Typescriptで組んだアプリケーションは指定のindex.htmlと組み合
 - [0060](0060_array/README.md) : 配列型
 - [0070](0070_destructuring_assignment/) : 分解代入
 - [0080](0080_tupple/README.md) : タプル
+- [0090](0090_enum/README.md) : 列挙型
 
