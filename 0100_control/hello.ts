@@ -22,12 +22,10 @@
     }
 
     // Accessing object to scan its keys. 
-    let object = { one: 1, two: 2, three: 3 };
+    let object = { one: 1, two: "弐", three: "III" };
     for (const key in object) {
-        if (Object.prototype.hasOwnProperty.call(object, key)) {
-            const element = object[key];
-            console.log(element);
-
-        }
+        const element = object[key];
+        console.log(typeof (key));
+        console.log("object.key:value is ", key, ":", element);
     }
 }

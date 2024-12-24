@@ -14,24 +14,47 @@ Typescript言語の基本的な制御構文について学習する。
 tsc hello.ts && node hello.js
 ```
 を実行する。
-## 列挙型
-Typescriptの列挙型は任意の識別子の集合からひとつのスカラー型を作る。
-### 宣言
-下の例では列挙型GeekAlphabetを宣言している。GeekAlphabet型変数fooは、alpha, beta, gamma, deltaのうちひとつの値を持つことができる。
+## 基本的な制御構文
+Typescriptの基本的な制御構文はC言語に似ている。
+### if ~ else
+if文はC言語と全く同じと言っていい。実行文が複文のときには{}で囲む。{}の中は独自の名前スコープを確立する。
 ```ts
-    // enum definition
-    enum GreekAlphabet {
-        alpha, beta, gamma, delta
-    };
-
-    // The enum is type. So, it can be as type annotation. 
-    let foo: GreekAlphabet;
+    // If statement
+    if (Math.PI == near_pi)
+        console.log("True!");
+    else {
+        console.log("False!");
+        console.log("Difference is  ", Math.abs(Math.PI - near_pi));
+    }
 ```
-### 列挙型を使う
-列挙型の値のスコープは型名の中に閉じている。したがって、グローバルに値を指定することはできない。また、実行時の値は単なる整数である。
+### for文他
+for文、while文、do ~ while文、switch case文もC言語とほとんど同じである。switch case文がfollow through を起こすこともＣ言語と同じである。
 ```ts
-    // enum value is inside scope of the type. 
-    foo = GreekAlphabet.alpha;
-    // In the executable code, enum value is represented by number. 
-    console.log("foo is ", foo);
+    // Accessing array in legacy programming style. 
+    let array: number[] = [1, 2, 3];
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        console.log(element);
+    }
+```
+## 先進的なループ構文
+あらかじめ範囲が分かっている対象への処理をするために特別なループ構文が憑依されている。
+### for ~ of 文
+配列のすべての要素を処理するためにfor ~ of 文が用意されている。以下の例でelementの型は配列要素の型であり、値は各々の配列要素の値を順にコピーしていく。
+```ts
+    let array: number[] = [1, 2, 3];
+    // Accessing array in modern programming style. 
+    for (const element of array) {
+        console.log(element);
+    }
+```
+### for ~ in 文
+オブジェクトのすべての要素を処理するためにfor ~ of 文が用意されている。以下の例でkeyの型はString型であり、object[key]の値は各々のオブジェクト要素を順にコピーしていく。
+```ts
+    // Accessing object to scan its keys. 
+    let object = { one: 1, two: "弐", three: "III" };
+    for (const key in object) {
+        const element = object[key];
+        console.log("object.key:value is ", key, ":", element);
+    }
 ```
