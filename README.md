@@ -41,4 +41,5 @@ Typescriptで組んだアプリケーションは指定のindex.htmlと組み合
 - [0080](0080_tupple/README.md) : タプル
 - [0090](0090_enum/README.md) : 列挙型
 - [0010](0100_control/README.md) : 制御構文
+- [0010](0110_function/README.md) : 関数構文
 
