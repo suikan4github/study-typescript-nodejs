@@ -43,4 +43,5 @@ Typescriptで組んだアプリケーションは指定のindex.htmlと組み合
 - [0100](0100_control/README.md) : 制御構文
 - [0110](0110_function/README.md) : 関数構文
 - [0120](0120_union/README.md) : ユニオン型
+- [0130](0130_object/README.md) : オブジェクト型
 
