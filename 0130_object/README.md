@@ -40,21 +40,21 @@ tsc hello.ts && node hello.js
     // Using type alias for the type annotation. 
     type complex = { re: number, im: number };
     let z: complex;
-    z.re = 0.0;  // This my cause warning : Variable 'z' is used before being assigned.ts(2454)
-    z.im = -1.0;
+    // z.re = 0.0;  // This may cause runtime error  : Variable 'z' is used before being assigned.ts
+    // z.im = -1.0;
 
     z = { re: 0.0, im: -1.0 }; // No warning.
+    console.log("z is ", z.re, z.im);
 ```
-なお、変数宣言時に"!"を付けると上記警告を抑制するようコンパイラに指示できる。
-```ts
-    // Using type alias for the type annotation. 
-    let u!: complex;    // Suppress warning. 
-    u.re = 0.0;         // No warning
-    u.im = -1.0;
-```
+
 ## 分割代入
 分割代入をする場合、新たにプロパティ名と同じ名前の変数を宣言することになる。こうして作った変数に再度分割代入することはできない。癖のある文法なので注意する。
 ```ts
     // Destructuring assignment
     let { re, im } = x;
+```
+## プロパティ名を変数名として消費しない分割代入
+```ts
+    //Destructuring assignment without property name variable. 
+    let { re: a, im: b } = x;
 ```
