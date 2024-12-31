@@ -44,4 +44,5 @@ Typescriptで組んだアプリケーションは指定のindex.htmlと組み合
 - [0110](0110_function/README.md) : 関数構文
 - [0120](0120_union/README.md) : ユニオン型
 - [0130](0130_object/README.md) : オブジェクト型
+- [0140](0140_object_with_function/README.md) : 関数を持つオブジェクト型。
 
