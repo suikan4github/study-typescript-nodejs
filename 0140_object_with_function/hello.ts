@@ -1,18 +1,24 @@
 {
     // Object declaration
-    let x = {
-        re: 0.0, im: 0.0,
-        eigen: function () { this.re = 1.0; this.im = 0.0 }
+    class MyClass {
+        value: number;
+        constructor() { this.value = 0.0 };
+        double;
+        triple;
     };
-    x.eigen();
 
-    // Create new object from an existing one. 
-    let y = Object.create(x);
-    y.i = function () { this.re = 0.0; this.im = 1.0 };
+    function doubleAtMyClass(): number { return this.value * 2.0 }
+    function tripleAtMyClass(): number { return this.value * 3.0 }
 
-    y.i();
+    let x: MyClass;
 
-    console.log("x is ", x.re, x.im);
-    console.log("y is ", y.re, y.im);
+    x = new MyClass;
+    x.double = doubleAtMyClass;
+    x.triple = tripleAtMyClass;
+    x.value = 3.14;
+
+    console.log("x.double() is ", x.double());
+    console.log("x.triple() is ", x.triple());
+
 
 }
