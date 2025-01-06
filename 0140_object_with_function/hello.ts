@@ -3,8 +3,8 @@
     class MyClass {
         value: number;
         constructor() { this.value = 0.0 };
-        double;
-        triple;
+        double: () => number;
+        triple: () => number;
     };
 
     function doubleAtMyClass(): number { return this.value * 2.0 }
@@ -12,10 +12,7 @@
 
     let x: MyClass;
 
-    x = new MyClass;
-    x.double = doubleAtMyClass;
-    x.triple = tripleAtMyClass;
-    x.value = 3.14;
+    x = { value: 3.14, double: doubleAtMyClass, triple: tripleAtMyClass };
 
     console.log("x.double() is ", x.double());
     console.log("x.triple() is ", x.triple());

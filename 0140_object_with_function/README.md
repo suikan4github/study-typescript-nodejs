@@ -16,47 +16,31 @@ tsc hello.ts && node hello.js
 を実行する。
 ## オブジェクト型と関数
 ###　関数を持つオブジェクトの生成
-値を持つプロパティ同様にオブジェクトの関数（メソッド）を宣言できる。以下の例では関数式としてメソッドを利用している。
+値を持つプロパティ同様にオブジェクトの型（クラス）の関数（メソッド）プロパティを宣言できる。以下の例ではクラスのプロパティに関数型注釈を与えてメソッドとしている。
 ```ts
     // Object declaration
-    let x = {
-        re: 0.0, im: 0.0,
-        i: () => { x.re = 0.0; x.im = 1.0 },
-        eigen: () => { x.re = 1.0; x.im = 0.0 }
+    class MyClass {
+        value: number;
+        constructor() { this.value = 0.0 };
+        double: () => number;
+        triple: () => number;
     };
-    x.eigen();
+
+
 ```
-### オブジェクト型
-オブジェクト型を表現する場合は、プロパティ名と型名を":"で連結したものを並べて"{}"でくるむ。
+### オブジェクトの値
+オブジェクト型の値を表現する場合は、プロパティ名と型名を":"で連結したものを並べて"{}"でくるむ。
+
+以下の例では先に作ったMyClass型に対してオブジェクト型の値を代入している。ここでメソッドの定義はアロー関数ではなくfunctionであることに注意。アロー関数は内部の名前を静的スコープで変数と束縛するため、メソッドとして使うことはできない。メソッド内部での変数の束縛はクラスではなくオブジェクトに対して動的なものだからである（後述）。
 ```ts
-    // Object declaration with type annotation. 
-    let y: { rad: number, angle: number } = { rad: 1.0, angle: 3.1415 / 4 };
+    function doubleAtMyClass(): number { return this.value * 2.0 }
+    function tripleAtMyClass(): number { return this.value * 3.0 }
 
+    let x: MyClass;
 
-```
-## 型エイリアスによる宣言
-オブジェクト型を初期値無しで型注釈を使って宣言する場合、最初はプロパティへの代入で警告が出る。これは、変数全体が一度も初期化されていないからである。
+    x = { value: 3.14, double: doubleAtMyClass, triple: tripleAtMyClass };
 
-このエラーを抑制したければ、最初に変数を（個々のプロパティではなく）オブジェクト型の値で初期化する。
-```ts
-    // Using type alias for the type annotation. 
-    type complex = { re: number, im: number };
-    let z: complex;
-    // z.re = 0.0;  // This may cause runtime error  : Variable 'z' is used before being assigned.ts
-    // z.im = -1.0;
-
-    z = { re: 0.0, im: -1.0 }; // No warning.
-    console.log("z is ", z.re, z.im);
+    console.log("x.double() is ", x.double());
+    console.log("x.triple() is ", x.triple());
 ```
 
-## 分割代入
-分割代入をする場合、新たにプロパティ名と同じ名前の変数を宣言することになる。こうして作った変数に再度分割代入することはできない。癖のある文法なので注意する。
-```ts
-    // Destructuring assignment
-    let { re, im } = x;
-```
-## プロパティ名を変数名として消費しない分割代入
-```ts
-    //Destructuring assignment without property name variable. 
-    let { re: a, im: b } = x;
-```
